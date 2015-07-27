@@ -10,7 +10,7 @@ RUN mkdir migrations && mkdir bin && \
     rm -f flyway-commandline-3.2.1-linux-x64.tar.gz && \
     mv flyway-3.2.1 bin/flyway && \
     chmod a+x bin/flyway
-ENV PATH $PATH:/home/flyway/bin    
+ENV PATH $PATH:/home/flyway/bin/flyway
 ADD run.sh /home/flyway/run.sh
 RUN chown -R flyway:flyway /home/flyway && chmod +x /home/flyway/run.sh
 USER flyway

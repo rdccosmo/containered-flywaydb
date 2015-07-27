@@ -12,7 +12,7 @@ RUN mkdir migrations && mkdir bin && \
     chmod a+x bin/flyway
 ENV PATH $PATH:/home/flyway/bin    
 ADD run.sh /home/flyway/run.sh
-RUN chown -R flyway:flyway /home/flyway/run.sh && chmod +x /home/flyway/run.sh
+RUN chown -R flyway:flyway /home/flyway && chmod +x /home/flyway/run.sh
 USER flyway
 CMD /home/flyway/run.sh
 RUN bash

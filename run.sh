@@ -27,8 +27,7 @@ if [[ -z $DATABASE_NAME ]] || [[ -z $DATABASE_USER ]] || [[ -z $DATABASE_PASSWOR
     exit 1
 fi
 
-while if ! nmap -T5 -p $DATABASE_PORT -sT db | grep open | wc -l ;then continue; else break;fi do break; done
-
+while ! nc db $DATABASE_PORT </dev/null; do sleep 10; done
 
 flyway -url=jdbc:$DATABASE_DRIVER://db:$DATABASE_PORT/$DATABASE_NAME -user=$DATABASE_USER -password=$DATABASE_PASSWORD -encoding=$DATABASE_ENCODING -locations=filesystem:$MIGRATIONS_PATH migrate
 

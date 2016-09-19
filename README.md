@@ -1,4 +1,4 @@
-# docker-flywaydb
+# containered-flywaydb
 
 This project aims to be an easy way to do migrations for you withou resorting to ORMs, just 
 plain old SQL files.

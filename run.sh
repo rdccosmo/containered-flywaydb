@@ -22,7 +22,7 @@ export MIGRATIONS_PATH=${MIGRATIONS_PATH:-'/home/flyway/migrations'}
 export DATABASE_PORT=${DATABASE_PORT:-3306}
 export DATABASE_ENCODING=${DATABASE_ENCODING:-UTF-8}
 
-if [[ -z $DATABASE_NAME ]] || [[ -z $DATABASE_USER ]] || [[ -z $DATABASE_PASSWORD ]] || [[ -z $DATABASE_DRIVER ]] || [[ -z $MIGRATIONS_PATH ]]; then
+if [[ -z $DATABASE_NAME ]] || [[ -z $DATABASE_USER ]] || [[ -z $DATABASE_DRIVER ]] || [[ -z $MIGRATIONS_PATH ]]; then
     usage
     exit 1
 fi
